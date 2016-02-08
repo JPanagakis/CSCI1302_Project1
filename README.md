@@ -2,13 +2,13 @@
 First Group Project in my CSCI1302 class. Measuring efficiency of sort algorithms.
 
 ### Classes and Their Functions
-- [ ] SortEfficiency (Extends JFrame, contains main())
+- [x] SortEfficiency (Extends JFrame, contains main())
 - [ ] SortPanel (Extends JPanel, displays results of algorithm testing)
 - [ ] Sort1 (A sort algorithm)
 - [ ] Sort2 (A sort algorithm)
 - [ ] Sort3 (A sort algorithm)
-- [ ] StopWatch (Times how long each algorithm takes, imported from /ch14/section_2/, modified)
-- [ ] ArrayUtil (Generates arrays, imported from /ch14/section_2/, modified)
+- [x] StopWatch (Times how long each algorithm takes, imported from /ch14/section_2/, modified)
+- [x] ArrayUtil (Generates arrays, imported from /ch14/section_2/, modified)
 
 ### Sort Algorithms
   Each of the sort algorithms should contain the following methods:
