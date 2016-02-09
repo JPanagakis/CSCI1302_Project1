@@ -187,13 +187,16 @@ public class SortPanel extends JPanel {
             int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 100);
 
             /*
+
+            //"Sortx" will be replaced with the names of their corresponding Sort Algorithms.
+
             Sort1 s1 = new Sort1(testArray);
             Sort2 s2 = new Sort2(testArray);
             Sort3 s3 = new Sort3(testArray);
 
-            sortResults1[i].setText(Integer.toString(s1.getTime) + "ms");
-            sortResults2[i].setText(Integer.toString(s2.getTime) + "ms");
-            sortResults3[i].setText(Integer.toString(s3.getTime) + "ms");
+            sortResults1[i].setText(Integer.toString(s1.getTime()) + "ms");
+            sortResults2[i].setText(Integer.toString(s2.getTime()) + "ms");
+            sortResults3[i].setText(Integer.toString(s3.getTime()) + "ms");
 
             for (int j = 0; j < TEST_ARRAY_SIZE[i].length; j++){
 
