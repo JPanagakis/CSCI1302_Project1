@@ -8,7 +8,7 @@ public class SortEfficiency extends JFrame {
     public SortEfficiency(){
 
         setTitle("Sort Efficiency");
-        setSize(700, 500);
+        setSize(800, 550);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

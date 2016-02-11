@@ -13,12 +13,14 @@ public class SortPanel extends JPanel {
 
     private GridBagConstraints c;
     private Font fontLabel, fontResult, fontButton;
-    private JTextField[] labels = new JTextField[5];
+    private JTextField[] labels = new JTextField[7];
     private JTextField[] sortTestSize = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults1 = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults2 = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults3 = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults4 = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] sortResults5 = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] sortResults6 = new JTextField[NUMBER_OF_TESTS];
     private JButton testButton;
     private ArrayUtil arrayUtil = new ArrayUtil();
 
@@ -52,12 +54,35 @@ public class SortPanel extends JPanel {
 
     // Creates all Arrays by passing them into createArray()
     public void createAllArrays(){
-        createArray(labels);
+        createLabelArray(labels);
         createArray(sortTestSize);
         createArray(sortResults1);
         createArray(sortResults2);
         createArray(sortResults3);
         createArray(sortResults4);
+        createArray(sortResults5);
+        createArray(sortResults6);
+    }
+
+    // Creates JText Fields and adds them to arrays
+    public void createLabelArray(JTextField[] jtArray){
+
+        for (int i = 0; i < 7; i++){
+
+            // Overrride gets rid of border
+            JTextField jt = new JTextField(""){
+                @Override public void setBorder(Border border){}
+            };
+            jt.setEditable(false);
+            jt.setHorizontalAlignment(JTextField.CENTER);
+
+            if (jtArray == labels){
+                jt.setFont(fontLabel);
+            } else {
+                jt.setFont(fontResult);
+            }
+            jtArray[i] = jt;
+        }
     }
 
     // Creates JText Fields and adds them to arrays
@@ -88,7 +113,9 @@ public class SortPanel extends JPanel {
         labels[1].setText("Sort 1");
         labels[2].setText("Sort 2");
         labels[3].setText("Sort 3");
-        labels[4].setText("Sorts Match");
+        labels[4].setText("Sort Match");
+        labels[5].setText("Search 1");
+        labels[6].setText("Search 2");
 
         for (int i = 0; i < 5; i++){
 
@@ -105,6 +132,8 @@ public class SortPanel extends JPanel {
         addResults(sortResults2, 2);
         addResults(sortResults3, 3);
         addResults(sortResults4, 4);
+        addResults(sortResults5, 5);
+        addResults(sortResults6, 6);
         addTestButton();
     }
 
@@ -146,7 +175,7 @@ public class SortPanel extends JPanel {
         testButton.setFont(fontButton);
 
         c.gridy = 6;
-        c.gridx = 1;
+        c.gridx = 2;
         c.gridwidth = 3;
         c.ipady = 40;
 
@@ -159,12 +188,13 @@ public class SortPanel extends JPanel {
         testButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("button works");
 
                 setLoadingText(sortResults1);
                 setLoadingText(sortResults2);
                 setLoadingText(sortResults3);
                 setLoadingText(sortResults4);
+                setLoadingText(sortResults5);
+                setLoadingText(sortResults6);
 
                 testSortAlgorithms();
             }
@@ -195,6 +225,8 @@ public class SortPanel extends JPanel {
             Sort1 s1 = new Sort1(testArray);
             Sort2 s2 = new Sort2(testArray);
             Sort3 s3 = new Sort3(testArray);
+            Search1 s5 = new Search1(testArray);
+            Search2 s6 = new Search2(testArray);
 
             sortResults1[i].setText(Integer.toString(s1.getTime()) + "ms");
             sortResults2[i].setText(Integer.toString(s2.getTime()) + "ms");
@@ -208,6 +240,8 @@ public class SortPanel extends JPanel {
             }
 
             sortResults4[i].setText(Boolean.toString(match));
+            searchResults1[i].setText(Integer.toString(s5.getTime()) + "ms");
+            searchResults2[i].setText(Integer.toString(s6.getTime()) + "ms");
             */
         }
     }
