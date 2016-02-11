@@ -9,14 +9,16 @@ import java.awt.event.ActionListener;
  */
 public class SortPanel extends JPanel {
 
+    private final int NUMBER_OF_TESTS = 5;
+
     private GridBagConstraints c;
     private Font fontLabel, fontResult, fontButton;
     private JTextField[] labels = new JTextField[5];
-    private JTextField[] sortTestSize = new JTextField[5];
-    private JTextField[] sortResults1 = new JTextField[5];
-    private JTextField[] sortResults2 = new JTextField[5];
-    private JTextField[] sortResults3 = new JTextField[5];
-    private JTextField[] sortResults4 = new JTextField[5];
+    private JTextField[] sortTestSize = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] sortResults1 = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] sortResults2 = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] sortResults3 = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] sortResults4 = new JTextField[NUMBER_OF_TESTS];
     private JButton testButton;
     private ArrayUtil arrayUtil = new ArrayUtil();
 
@@ -181,7 +183,7 @@ public class SortPanel extends JPanel {
     // Performs the actual test
     public void testSortAlgorithms(){
 
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < NUMBER_OF_TESTS; i++){
 
             boolean match = true;
             int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 100);
