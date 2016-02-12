@@ -3,6 +3,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 /**
  * Created by justin on 2/8/16.
@@ -19,8 +20,8 @@ public class AlgEffPanel extends JPanel {
     private JTextField[] sortResults2 = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults3 = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults4 = new JTextField[NUMBER_OF_TESTS];
-    private JTextField[] sortResults5 = new JTextField[NUMBER_OF_TESTS];
-    private JTextField[] sortResults6 = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] searchResults1 = new JTextField[NUMBER_OF_TESTS];
+    private JTextField[] searchResults2 = new JTextField[NUMBER_OF_TESTS];
     private JButton testButton;
     private ArrayUtil arrayUtil = new ArrayUtil();
 
@@ -60,8 +61,8 @@ public class AlgEffPanel extends JPanel {
         createArray(sortResults2);
         createArray(sortResults3);
         createArray(sortResults4);
-        createArray(sortResults5);
-        createArray(sortResults6);
+        createArray(searchResults1);
+        createArray(searchResults2);
     }
 
     // Creates JText Fields and adds them to arrays
@@ -110,11 +111,11 @@ public class AlgEffPanel extends JPanel {
     public void setLabels(){
 
         labels[0].setText("Array Size");
-        labels[1].setText("Sort 1");
+        labels[1].setText("Insertion Sort");
         labels[2].setText("Sort 2");
         labels[3].setText("Sort 3");
         labels[4].setText("Sort Match");
-        labels[5].setText("Search 1");
+        labels[5].setText("Interpolation Search");
         labels[6].setText("Search 2");
 
         for (int i = 0; i < 5; i++){
@@ -132,8 +133,8 @@ public class AlgEffPanel extends JPanel {
         addResults(sortResults2, 2);
         addResults(sortResults3, 3);
         addResults(sortResults4, 4);
-        addResults(sortResults5, 5);
-        addResults(sortResults6, 6);
+        addResults(searchResults1, 5);
+        addResults(searchResults2, 6);
         addTestButton();
     }
 
@@ -193,8 +194,8 @@ public class AlgEffPanel extends JPanel {
                 setLoadingText(sortResults2);
                 setLoadingText(sortResults3);
                 setLoadingText(sortResults4);
-                setLoadingText(sortResults5);
-                setLoadingText(sortResults6);
+                setLoadingText(searchResults1);
+                setLoadingText(searchResults2);
 
                 testSortAlgorithms();
             }
@@ -215,34 +216,37 @@ public class AlgEffPanel extends JPanel {
 
         for (int i = 0; i < NUMBER_OF_TESTS; i++){
 
+            Random random = new Random();
             boolean match = true;
             int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 100);
-
-            /*
+            int key = random.nextInt(TEST_ARRAY_SIZE[i]);
 
             //"Sortx" will be replaced with the names of their corresponding Sort Algorithms.
 
-            Sort1 s1 = new Sort1(testArray);
-            Sort2 s2 = new Sort2(testArray);
-            Sort3 s3 = new Sort3(testArray);
-            Search1 s5 = new Search1(testArray);
-            Search2 s6 = new Search2(testArray);
+            InsertionSort s1 = new InsertionSort(testArray);
+            //Sort2 s2 = new Sort2(testArray);
+            //Sort3 s3 = new Sort3(testArray);
 
-            sortResults1[i].setText(Integer.toString(s1.getTime()) + "ms");
-            sortResults2[i].setText(Integer.toString(s2.getTime()) + "ms");
-            sortResults3[i].setText(Integer.toString(s3.getTime()) + "ms");
+            int[] sortedArray = s1.getSortedArray();
 
-            for (int j = 0; j < TEST_ARRAY_SIZE[i].length; j++){
+            InterpolationSearch s5 = new InterpolationSearch(sortedArray, sortedArray.length, testArray[key]);
+            //Search2 s6 = new Search2(testArray);
 
-                if (s1.getSortedArray[j] != s2.getSortedArray[j] || s1.getSortedArray[j] != s3.getSortedArray[j]){
-                    match = false;
-                }
-            }
+            sortResults1[i].setText(Long.toString(s1.getTime()) + "ms");
+            //sortResults2[i].setText(Long.toString(s2.getTime()) + "ms");
+            //sortResults3[i].setText(Long.toString(s3.getTime()) + "ms");
 
-            sortResults4[i].setText(Boolean.toString(match));
-            searchResults1[i].setText(Integer.toString(s5.getTime()) + "ms");
-            searchResults2[i].setText(Integer.toString(s6.getTime()) + "ms");
-            */
+            //for (int j = 0; j < TEST_ARRAY_SIZE[i].length; j++){
+
+            //    if (s1.getSortedArray[j] != s2.getSortedArray[j] || s1.getSortedArray[j] != s3.getSortedArray[j]){
+            //        match = false;
+            //    }
+            //}
+
+            //sortResults4[i].setText(Boolean.toString(match));
+            searchResults1[i].setText(Long.toString(s5.getTime()) + "ms");
+            //searchResults2[i].setText(Long.toString(s6.getTime()) + "ms");
+
         }
     }
 }
