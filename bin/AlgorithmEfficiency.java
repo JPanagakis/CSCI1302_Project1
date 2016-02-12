@@ -3,11 +3,11 @@ import javax.swing.*;
 /**
  * Created by justin on 2/8/16.
  */
-public class SortEfficiency extends JFrame {
+public class AlgorithmEfficiency extends JFrame {
 
-    public SortEfficiency(){
+    public AlgorithmEfficiency(){
 
-        setTitle("Sort Efficiency");
+        setTitle("Algorithm Efficiency");
         setSize(800, 550);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -16,8 +16,8 @@ public class SortEfficiency extends JFrame {
 
     public static void main(String[] args){
 
-        SortEfficiency frame = new SortEfficiency();
-        SortPanel panel = new SortPanel();
+        AlgorithmEfficiency frame = new AlgorithmEfficiency();
+        AlgEffPanel panel = new AlgEffPanel();
 
         frame.add(panel);
         frame.setVisible(true);

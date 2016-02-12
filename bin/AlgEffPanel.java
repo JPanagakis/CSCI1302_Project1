@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by justin on 2/8/16.
  */
-public class SortPanel extends JPanel {
+public class AlgEffPanel extends JPanel {
 
     private final int NUMBER_OF_TESTS = 5;
 
@@ -27,7 +27,7 @@ public class SortPanel extends JPanel {
     private final int[] TEST_ARRAY_SIZE = {100, 1000, 10000, 50000, 100000};
 
     // Initialize SortPanel Object
-    public SortPanel(){
+    public AlgEffPanel(){
 
         defineLayout();
         createAllArrays();
