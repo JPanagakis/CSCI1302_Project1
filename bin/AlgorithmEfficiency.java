@@ -11,7 +11,7 @@ public class AlgorithmEfficiency extends JFrame {
     public AlgorithmEfficiency(){
 
         setTitle("Algorithm Efficiency");
-        setSize(1200, 550);
+        setSize(1000, 550);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
