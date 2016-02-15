@@ -1,5 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +17,7 @@ public class AlgEffPanel extends JPanel {
 
     private GridBagConstraints c;
     private Font fontLabel, fontResult, fontButton;
-    private JTextField[] labels = new JTextField[7];
+    private JTextPane[] labels = new JTextPane[7];
     private JTextField[] sortTestSize = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults1 = new JTextField[NUMBER_OF_TESTS];
     private JTextField[] sortResults2 = new JTextField[NUMBER_OF_TESTS];
@@ -66,22 +69,26 @@ public class AlgEffPanel extends JPanel {
     }
 
     // Creates JText Fields and adds them to arrays
-    public void createLabelArray(JTextField[] jtArray){
+    public void createLabelArray(JTextPane[] jtArray){
 
         for (int i = 0; i < 7; i++){
 
             // Overrride gets rid of border
-            JTextField jt = new JTextField(""){
+            JTextPane jt = new JTextPane(){
                 @Override public void setBorder(Border border){}
             };
             jt.setEditable(false);
-            jt.setHorizontalAlignment(JTextField.CENTER);
+            jt.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-            if (jtArray == labels){
-                jt.setFont(fontLabel);
-            } else {
-                jt.setFont(fontResult);
-            }
+            jt.setFont(fontLabel);
+            jt.setBackground(Color.lightGray);
+
+            // Center text
+            StyledDocument doc = jt.getStyledDocument();
+            SimpleAttributeSet center = new SimpleAttributeSet();
+            StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+            doc.setParagraphAttributes(0, doc.getLength(), center, false);
+
             jtArray[i] = jt;
         }
     }
@@ -98,11 +105,8 @@ public class AlgEffPanel extends JPanel {
             jt.setEditable(false);
             jt.setHorizontalAlignment(JTextField.CENTER);
 
-            if (jtArray == labels){
-                jt.setFont(fontLabel);
-            } else {
-                jt.setFont(fontResult);
-            }
+            jt.setFont(fontResult);
+
             jtArray[i] = jt;
         }
     }
@@ -110,13 +114,13 @@ public class AlgEffPanel extends JPanel {
     // Sets labels to their proper text
     public void setLabels(){
 
-        labels[0].setText("Array Size");
-        labels[1].setText("Insertion Sort");
-        labels[2].setText("Sort 2");
-        labels[3].setText("Sort 3");
-        labels[4].setText("Sort Match");
-        labels[5].setText("Interpolation Search");
-        labels[6].setText("Search 2");
+        labels[0].setText("Array Size\n");
+        labels[1].setText("Insertion\nSort");
+        labels[2].setText("Sort 2\n");
+        labels[3].setText("Sort 3\n");
+        labels[4].setText("Sort Match\n");
+        labels[5].setText("Interpolation\nSearch");
+        labels[6].setText("Search 2\n");
 
         for (int i = 0; i < 5; i++){
 
@@ -142,7 +146,7 @@ public class AlgEffPanel extends JPanel {
      * Adds the Labels to the Panel
      * @param jtArray JTextField array containing JTextFields to add to the panel
      */
-    public void addLabels(JTextField[] jtArray){
+    public void addLabels(JTextPane[] jtArray){
 
         c.gridy = 0;
 
@@ -218,7 +222,7 @@ public class AlgEffPanel extends JPanel {
 
             Random random = new Random();
             boolean match = true;
-            int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 100);
+            int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 1000);
             int key = random.nextInt(TEST_ARRAY_SIZE[i]);
 
             //"Sortx" will be replaced with the names of their corresponding Sort Algorithms.
