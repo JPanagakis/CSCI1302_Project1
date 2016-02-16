@@ -114,13 +114,13 @@ public class AlgEffPanel extends JPanel {
     // Sets labels to their proper text
     public void setLabels(){
 
-        labels[0].setText("Array Size\n");
-        labels[1].setText("Insertion\nSort");
-        labels[2].setText("Sort 2\n");
-        labels[3].setText("Sort 3\n");
-        labels[4].setText("Sort Match\n");
-        labels[5].setText("Interpolation\nSearch");
-        labels[6].setText("Search 2\n");
+        labels[0].setText("\nArray Size\n\n");
+        labels[1].setText("\nInsertion\nSort\n");
+        labels[2].setText("\nSort 2\n\n");
+        labels[3].setText("\nSort 3\n\n");
+        labels[4].setText("\nSort Match\n\n");
+        labels[5].setText("\nInterpolation\nSearch\n");
+        labels[6].setText("\nSearch 2\n\n");
 
         for (int i = 0; i < 5; i++){
 
