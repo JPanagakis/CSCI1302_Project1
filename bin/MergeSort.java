@@ -10,8 +10,7 @@ public class MergeSort  {
     
 /**
 Turns a number into its English name.
-@param number a positive integer < 1,000
-@return the name of number (e.g., “two hundred seventy four”)
+@param inputArr[]
 */
 public void sort(int inputArr[]) 
 { 
@@ -25,8 +24,7 @@ public void sort(int inputArr[])
 
 /**
 Turns a number into its English name.
-@param number a positive integer < 1,000
-@return the name of number (e.g., “two hundred seventy four”)
+@param lowerIndex, higherIndex 
 */
 private void doMergeSort(int lowerIndex, int higherIndex) 
 { 
@@ -45,8 +43,7 @@ private void doMergeSort(int lowerIndex, int higherIndex)
 
 /**
 Turns a number into its English name.
-@param number a positive integer < 1,000
-@return the name of number (e.g., “two hundred seventy four”)
+@param lowerIndex, middle, and higherIndex
 */
 private void mergeParts(int lowerIndex, int middle, int higherIndex) 
 { 
