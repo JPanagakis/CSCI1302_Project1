@@ -1,4 +1,9 @@
-public class MySelectionSort {
+public class SelectionSort {
+ 
+ public SelectionSort(int[] a) {
+    int[] array = a;
+    int[] sortedArray = doSelectionSort(array);
+ }
  
     public static int[] doSelectionSort(int[] arr){
          
@@ -15,13 +20,8 @@ public class MySelectionSort {
         }
         return arr;
     }
-     
-    public static void main(String a[]){
-         
-        int[] arr1 = {10,34,2,56,7,67,88,42};
-        int[] arr2 = doSelectionSort(arr1);
-        for(int i:arr2){
-            System.out.print(i);
-            System.out.print(", ");
-        }
+    public int[] getSortedArray() {
+        return sortedArray;
+    } 
+    
     }
