@@ -1,3 +1,7 @@
+*
+*created by Lateef Davis 02/16/2016
+*
+
 public class MergeSort  { 
 
     private int[] array; 
