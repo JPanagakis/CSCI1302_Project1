@@ -1,4 +1,6 @@
- int[] data;
+public class BinarySearch {
+
+    int[] data;
     int size;
 
     public boolean binarySearch(int key) 
