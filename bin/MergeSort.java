@@ -60,11 +60,13 @@ private void mergeParts(int lowerIndex, int middle, int higherIndex)
           j++; 
         } 
         k++; 
+        } 
+        
+        while (i <= middle) 
+        { 
+          array[k] = tempMergArr[i]; 
+          k++; 
+          i++; 
+        } 
     } 
-        while (i <= middle) { 
-        array[k] = tempMergArr[i]; 
-        k++; 
-      i++; 
-    } 
-  } 
 }
