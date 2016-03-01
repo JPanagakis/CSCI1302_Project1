@@ -103,6 +103,6 @@ private void mergeParts(int lowerIndex, int middle, int higherIndex)
 public int[] getSortedArray() 
 {
 	
-	return null;
+	return array;
 } 
 }
