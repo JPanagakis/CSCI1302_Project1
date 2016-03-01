@@ -9,7 +9,7 @@ public class MergeSort  {
     private int length; 
     
 /**
-Turns a number into its English name.
+Sorts the array.
 @param inputArr[]
 */
 public void sort(int inputArr[]) 
@@ -23,7 +23,7 @@ public void sort(int inputArr[])
 } 
 
 /**
-Turns a number into its English name.
+Does a merge sort  on a lower index and higher index.
 @param lowerIndex, higherIndex 
 */
 private void doMergeSort(int lowerIndex, int higherIndex) 
@@ -42,7 +42,7 @@ private void doMergeSort(int lowerIndex, int higherIndex)
 } 
 
 /**
-Turns a number into its English name.
+Merges parts of the array.
 @param lowerIndex, middle, and higherIndex
 */
 private void mergeParts(int lowerIndex, int middle, int higherIndex) 
