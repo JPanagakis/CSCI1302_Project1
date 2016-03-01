@@ -116,11 +116,11 @@ public class AlgEffPanel extends JPanel {
 
         labels[0].setText("\nArray Size\n\n");
         labels[1].setText("\nInsertion\nSort\n");
-        labels[2].setText("\nSort 2\n\n");
-        labels[3].setText("\nSort 3\n\n");
+        labels[2].setText("\nMerge\nSort\n");
+        labels[3].setText("\nSelection\nSort\n");
         labels[4].setText("\nSort Match\n\n");
         labels[5].setText("\nInterpolation\nSearch\n");
-        labels[6].setText("\nSearch 2\n\n");
+        labels[6].setText("\nBinary\nSearch\n");
 
         for (int i = 0; i < 5; i++){
 
@@ -228,26 +228,26 @@ public class AlgEffPanel extends JPanel {
             //"Sortx" will be replaced with the names of their corresponding Sort Algorithms.
 
             InsertionSort s1 = new InsertionSort(testArray);
-            //Sort2 s2 = new Sort2(testArray);
-            //Sort3 s3 = new Sort3(testArray);
+            MergeSort s2 = new MergeSort(testArray);
+            SelectionSort s3 = new SelectionSort(testArray);
 
             int[] sortedArray = s1.getSortedArray();
 
             InterpolationSearch s5 = new InterpolationSearch(sortedArray, sortedArray.length, testArray[key]);
-            //Search2 s6 = new Search2(testArray);
+            //BinarySearch s6 = new BinarySearch(testArray);
 
             sortResults1[i].setText(Long.toString(s1.getTime()) + "ms");
-            //sortResults2[i].setText(Long.toString(s2.getTime()) + "ms");
-            //sortResults3[i].setText(Long.toString(s3.getTime()) + "ms");
+            sortResults2[i].setText(Long.toString(s2.getTime()) + "ms");
+            sortResults3[i].setText(Long.toString(s3.getTime()) + "ms");
 
-            //for (int j = 0; j < TEST_ARRAY_SIZE[i].length; j++){
+            for (int j = 0; j < TEST_ARRAY_SIZE.length; j++){
 
-            //    if (s1.getSortedArray[j] != s2.getSortedArray[j] || s1.getSortedArray[j] != s3.getSortedArray[j]){
-            //        match = false;
-            //    }
-            //}
+                if (s1.getSortedArray()[j] != s2.getSortedArray()[j] || s1.getSortedArray()[j] != s3.getSortedArray()[j]){
+                    match = false;
+                }
+            }
 
-            //sortResults4[i].setText(Boolean.toString(match));
+            sortResults4[i].setText(Boolean.toString(match));
             searchResults1[i].setText(Long.toString(s5.getTime()) + "ms");
             //searchResults2[i].setText(Long.toString(s6.getTime()) + "ms");
 
