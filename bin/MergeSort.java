@@ -11,8 +11,8 @@ public class MergeSort  {
     private long time;
     
 /**
-Turns a number into its English name.
-@param inputArr[]
+Calls a stopwatch oject to sort and keep track of time.
+@param int[] b
 */
 public MergeSort(int[] b)
 {
@@ -20,6 +20,10 @@ public MergeSort(int[] b)
 	sort(b);
 }
 
+/**
+Sorts the merged array
+@param inputArr[]
+*/
 public void sort(int[] inputArr) 
 { 
 	timeKeep.start();
