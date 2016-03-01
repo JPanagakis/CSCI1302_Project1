@@ -7,23 +7,39 @@ public class MergeSort  {
     private int[] array; 
     private int[] tempMergArr; 
     private int length; 
+    private StopWatch timeKeep;
+    private long time;
     
 /**
-Sorts the array.
+Turns a number into its English name.
 @param inputArr[]
 */
-public void sort(int inputArr[]) 
+public MergeSort(int[] b)
+{
+	timeKeep = new StopWatch();
+	sort(b);
+}
+
+public void sort(int[] inputArr) 
 { 
-  
+	timeKeep.start();
+	
     this.array = inputArr; 
     this.length = inputArr.length; 
     this.tempMergArr = new int[length]; 
 
     doMergeSort(0, length - 1); 
+    timeKeep.stop();
+    time = timeKeep.getElapsedTime();
 } 
 
+public long getTime()
+{
+	return time;
+}
+
 /**
-Does a merge sort  on a lower index and higher index.
+Merges the lower index and higher index.
 @param lowerIndex, higherIndex 
 */
 private void doMergeSort(int lowerIndex, int higherIndex) 
@@ -42,7 +58,7 @@ private void doMergeSort(int lowerIndex, int higherIndex)
 } 
 
 /**
-Merges parts of the array.
+Turns a number into its English name.
 @param lowerIndex, middle, and higherIndex
 */
 private void mergeParts(int lowerIndex, int middle, int higherIndex) 
@@ -78,5 +94,11 @@ private void mergeParts(int lowerIndex, int middle, int higherIndex)
           k++; 
           i++; 
         } 
-    } 
+    }
+
+public int[] getSortedArray() 
+{
+	
+	return null;
+} 
 }
