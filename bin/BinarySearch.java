@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class BinarySearch {
 
     int[] data;
@@ -5,6 +7,7 @@ public class BinarySearch {
 
     public boolean binarySearch(int key) 
     {
+         Stopwatch stopwatch = new Stopwatch();
          int low = 0;
          int high = size - 1;
           
@@ -22,3 +25,7 @@ public class BinarySearch {
         }
         return false;
    }
+    stopWatch.start();
+    binarySearch(numbers,size);
+    stopWatch.stop();
+}
