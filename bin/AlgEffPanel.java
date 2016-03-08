@@ -222,7 +222,7 @@ public class AlgEffPanel extends JPanel {
 
             Random random = new Random();
             boolean match = true;
-            int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 1000);
+            int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 1000000);
             int key = random.nextInt(TEST_ARRAY_SIZE[i]);
 
             //"Sortx" will be replaced with the names of their corresponding Sort Algorithms.
@@ -234,7 +234,7 @@ public class AlgEffPanel extends JPanel {
             int[] sortedArray = s1.getSortedArray();
 
             InterpolationSearch s5 = new InterpolationSearch(sortedArray, sortedArray.length, testArray[key]);
-            //BinarySearch s6 = new BinarySearch(testArray);
+            BinarySearch s6 = new BinarySearch(testArray);
 
             sortResults1[i].setText(Long.toString(s1.getTime()) + "ms");
             sortResults2[i].setText(Long.toString(s2.getTime()) + "ms");
@@ -249,7 +249,7 @@ public class AlgEffPanel extends JPanel {
 
             sortResults4[i].setText(Boolean.toString(match));
             searchResults1[i].setText(Long.toString(s5.getTime()) + "ms");
-            //searchResults2[i].setText(Long.toString(s6.getTime()) + "ms");
+            searchResults2[i].setText(Long.toString(s6.getTime()) + "ms");
 
         }
     }

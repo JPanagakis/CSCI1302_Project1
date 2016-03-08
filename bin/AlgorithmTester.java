@@ -13,15 +13,15 @@ public class AlgorithmTester {
         boolean sortWorks = true;
         ArrayUtil arrayUtil = new ArrayUtil();
 
-        int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE, 100);
+        int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE, 1000);
 
         int key = random.nextInt(TEST_ARRAY_SIZE);
 
         //put your Sort algorithm Class name here and un-blockComment
 
-        //InsertionSort s1 = new InsertionSort(testArray);
+        MergeSort s1 = new MergeSort(testArray);
 
-        /*
+
         int[] sortedArray = s1.getSortedArray();
 
         System.out.println("\nSort");
@@ -37,13 +37,13 @@ public class AlgorithmTester {
             }
         }
         System.out.println("\nWorks: " + sortWorks);
-        */
+
 
         //use this section for Search algorithms
 
-        //InterpolationSearch s5 = new InterpolationSearch(sortedArray, sortedArray.length, testArray[key]);
+        BinarySearch s5 = new BinarySearch(sortedArray, sortedArray.length, testArray[key]);
 
-        /*
+
         System.out.println("\nSearch");
         System.out.println("----------------------------------");
         System.out.println("Time: " + s5.getTime() + "ms");
@@ -54,6 +54,6 @@ public class AlgorithmTester {
         } else {
             System.out.println("Works: false");
         }
-        */
+
     }
 }

@@ -1,6 +1,6 @@
 public class BinarySearch {
 
-    int[] data;
+    /*int[] data;
     int size;
 
     public boolean binarySearch(int key) 
@@ -20,5 +20,5 @@ public class BinarySearch {
                  high = middle - 1;
              }
         }
-        return false;
+        return false;*/
    }
