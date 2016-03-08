@@ -8,7 +8,7 @@ First Group Project in my CSCI1302 class. Measuring efficiency of sort and searc
 - [x] **MergeSort** (A sort algorithm)
 - [x] **SelectionSort** (A sort algorithm)
 - [x] **InterpolationSearch** (A search algorithm)
-- [ ] **BinarySearch** (A search algorithm)
+- [x] **BinarySearch** (A search algorithm)
 - [x] **StopWatch** (Times how long each algorithm takes, imported from /ch14/section_2/, modified)
 - [x] **ArrayUtil** (Generates arrays, imported from /ch14/section_2/, modified)
 - [x] **AlgorithmTester** (This is not a part of the final product. This is just a tester class used to test our Sort and Search algorithms so that we don't have to change the **SortPannel**. See comments in the class for instructions on its usage)
@@ -45,5 +45,3 @@ Use **InterpolationSearch** as a reference if needed.
     |------------------------------------------------------------------|
     |                    |    Button to Run Test   |                   |
     |------------------------------------------------------------------|
-
-## Let's go for a Perfect Score
