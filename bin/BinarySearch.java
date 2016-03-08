@@ -4,12 +4,16 @@ public class BinarySearch {
 
     int[] data;
     int size;
+    private StopWatch stopWatch;
+    private long time;
 
     public boolean binarySearch(int key) 
     {
-         Stopwatch stopwatch = new Stopwatch();
+         stopwatch = new Stopwatch();
          int low = 0;
          int high = size - 1;
+         
+         stopWatch.start();
           
          while(high >= low) {
              int middle = (low + high) / 2;
@@ -24,8 +28,10 @@ public class BinarySearch {
              }
         }
         return false;
+        stopWatch.stop();
+        time = getElapsedTime();
    }
-    stopWatch.start();
-    binarySearch(numbers,size);
-    stopWatch.stop();
+       public long getTime(){
+          return time;
+       }
 }
