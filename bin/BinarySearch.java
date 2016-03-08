@@ -1,15 +1,17 @@
-import javax.swing.*;
-
 public class BinarySearch {
 
-    int[] data;
-    int size;
     private StopWatch stopWatch;
     private long time;
+    private int target;
 
-    public boolean binarySearch(int key) 
+    public BinarySearch(int[] a, int size, int key){
+
+       stopWatch = new StopWatch();
+       target = binarySearch(a, size, key);
+    }
+
+    public int binarySearch(int[] data, int size, int key)
     {
-         stopwatch = new Stopwatch();
          int low = 0;
          int high = size - 1;
          
@@ -18,7 +20,10 @@ public class BinarySearch {
          while(high >= low) {
              int middle = (low + high) / 2;
              if(data[middle] == key) {
-                 return true;
+
+                 stopWatch.stop();
+                 time = stopWatch.getElapsedTime();
+                 return middle;
              }
              if(data[middle] < key) {
                  low = middle + 1;
@@ -29,11 +34,14 @@ public class BinarySearch {
         }
 
 
-        return false;
         stopWatch.stop();
-        time = getElapsedTime();
+        time = stopWatch.getElapsedTime();
+        return -1;
    }
        public long getTime(){
           return time;
+       }
+       public int getTarget(){
+          return target;
        }
 }
