@@ -222,7 +222,7 @@ public class AlgEffPanel extends JPanel {
 
             Random random = new Random();
             boolean match = true;
-            int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 1000000);
+            int[] testArray = arrayUtil.randomIntArray(TEST_ARRAY_SIZE[i], 10000);
             int key = random.nextInt(TEST_ARRAY_SIZE[i]);
 
             //"Sortx" will be replaced with the names of their corresponding Sort Algorithms.
