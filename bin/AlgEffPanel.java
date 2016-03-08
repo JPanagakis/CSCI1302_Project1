@@ -234,7 +234,7 @@ public class AlgEffPanel extends JPanel {
             int[] sortedArray = s1.getSortedArray();
 
             InterpolationSearch s5 = new InterpolationSearch(sortedArray, sortedArray.length, testArray[key]);
-            BinarySearch s6 = new BinarySearch(testArray);
+            BinarySearch s6 = new BinarySearch(sortedArray, sortedArray.length, testArray[key]);
 
             sortResults1[i].setText(Long.toString(s1.getTime()) + "ms");
             sortResults2[i].setText(Long.toString(s2.getTime()) + "ms");
